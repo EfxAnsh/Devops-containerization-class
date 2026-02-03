@@ -17,7 +17,7 @@
 2 days ago
 
 Add Experiment 2
- - Download Vagrantfile of required VM OS using `vagrant init hashicorp/bionic64`, run `vagrant up` to start up the VM and `vagrant ssh` to access the VM terminal.
+ - Download Vagrantfile of required VM OS using `vagrant init generic/ubuntu2204`, run `vagrant up --provider=libvirt` to start up the VM and `vagrant ssh` to access the VM terminal.
 5 days ago
 
 Restructure labfile and Add theory files
@@ -35,18 +35,18 @@ Restructure labfile and Add theory files
 #### **Observations**
 **1. Storage Utilization:** The disk usage for the VM.
 ```PS
-VBoxManage showmediuminfo <path/to/virtualdrive>
+sudo virsh domblkinfo Experiment1_default vda --human
 ```
 ![](./vm-size.jpeg)
   
-> The VM installation consumed approximately **1773 MB** of disk space to store the Guest OS and virtual disk.
+> The VM installation consumed approximately **702.879 MB** of disk space to store the Guest OS and virtual disk.
 
 **2. Boot Performance:** The startup time required for the Virtual Machine to boot.
 ```bash
 systemd-analyze
 ```
 ![](./vm-boot-time.jpeg)
-> The VM took **27.049 seconds** to fully boot (Kernel: 6.634s + Userspace: 20.414s), demonstrating high startup latency.
+> The VM took **8.019 seconds** to fully boot (Kernel: 2.339s + Userspace: 5.679s), demonstrating high startup latency.
 
 **3. Memory Usage:** Amount of RAM resources allocated to and used by the Guest OS.
 
@@ -55,7 +55,7 @@ free -h
 ```
 ![](./vm-memory-usage.jpeg)
 
-> The VM reserved **985 MB** of total RAM from the host, with *73 MB* actively used and 670 MB used up in buffers/cache.
+> The VM reserved **1.9Gb** of total RAM from the host, with *166 MB* actively used and 304 MB used up in buffers/cache.
 
 ### **Part B: Containers**
 
@@ -77,7 +77,7 @@ docker images
 
 ![](./docker-images.jpeg)
 
-> The Nginx container image requires only **161 MB**.
+> The Nginx container image requires only **65.7MB**.
 
 **2. Boot Performance**
 Measurement of the time required to start the containerized application.
@@ -87,7 +87,7 @@ time docker run -d -p 8080:80 --name nginx-container nginx
 ```
 ![](./docker-time-run.jpeg)
 
-> The container started in **0.428 seconds**.
+> The container started in **0.411 seconds**.
 
 **3. Memory Allocation**
 Real-time monitoring of the container's resource consumption.
@@ -97,13 +97,6 @@ docker stats
 ```
 ![](./docker-stats.jpeg)
 
-> The running container uses **13.14 MiB** of RAM.
+> The running container uses **13.11 MiB** of RAM.
 
-### **Comparison**
 
-| Metric | Virtual Machine | Container | Difference |
-| :--- | :--- | :--- | :--- |
-| **Disk Usage** | **~1.8 GB** | **161 MB** | Containers are *smaller* because they do not require a full Guest OS copy. |
-| **Boot Time** | **27.05s** | **0.43s**  | Containers start *faster* by leveraging the already-running Host Kernel. |
-| **Memory** | **~985 MB** Reserved / *73 MB* Used | **13.14 MB** Used | VMs reserve a fixed block of RAM; Containers use only what the process needs dynamically. |
-| **Architecture** | **Hardware Virtualization** (Guest OS) | **OS Virtualization** (Shared Kernel) | VMs run a full isolated OS; Containers run as isolated processes on the Host OS. |
