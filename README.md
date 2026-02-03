@@ -6,7 +6,9 @@
 | **Batch** | B2 CCVT |
 
 ## Lab Experiments
+
 | S. No. | Experiment |
+| --: | :-- |
 | 1 | [Comparison of Virtual Machines (VMs) and Containers](./Lab/Experiment1/README.md) |
 
 ## Theory
