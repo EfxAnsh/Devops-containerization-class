@@ -22,22 +22,22 @@ Add Experiment 2
 
 Restructure labfile and Add theory files
 
-![](./vagrant-init.png)
-![](./vagrant-up.png)
-![](./vagrant-ssh.png)
+![](./vagrant-init.jpeg)
+![](./vagrant-up.jpeg)
+![](./vagrant-ssh.jpeg)
 
  - Install nginx using `sudo apt install -y nginx` and run the service using `sudo systemctl start nginx`. Verify it by `curl localhost`.
 
-![](./vm-setup-1.png)
-![](./vm-setup-2.png)
-![](./vm-setup-3.png)
+![](./vm-setup-1.jpeg)
+![](./vm-setup-2.jpeg)
+![](./vm-setup-3.jpeg)
 
 #### **Observations**
 **1. Storage Utilization:** The disk usage for the VM.
 ```PS
 VBoxManage showmediuminfo <path/to/virtualdrive>
 ```
-![](./vm-size.png)
+![](./vm-size.jpeg)
   
 > The VM installation consumed approximately **1773 MB** of disk space to store the Guest OS and virtual disk.
 
@@ -45,7 +45,7 @@ VBoxManage showmediuminfo <path/to/virtualdrive>
 ```bash
 systemd-analyze
 ```
-![](./vm-boot-time.png)
+![](./vm-boot-time.jpeg)
 > The VM took **27.049 seconds** to fully boot (Kernel: 6.634s + Userspace: 20.414s), demonstrating high startup latency.
 
 **3. Memory Usage:** Amount of RAM resources allocated to and used by the Guest OS.
@@ -53,7 +53,7 @@ systemd-analyze
 ```bash
 free -h
 ```
-![](./vm-memory-usage.png)
+![](./vm-memory-usage.jpeg)
 
 > The VM reserved **985 MB** of total RAM from the host, with *73 MB* actively used and 670 MB used up in buffers/cache.
 
@@ -64,8 +64,8 @@ free -h
     - `-d`: Runs the container in the background, allowing you to continue using the terminal session.
     - `-p 8080:80`: Maps port 8080 for the host to port 80 for the container.
 
-![](./docker-nginx-run.png)
-![](./docker-curl.png)
+![](./docker-nginx-run.jpeg)
+![](./docker-curl.jpeg)
 
 #### **Observations**
 **1. Storage Utilization**
@@ -75,7 +75,7 @@ An analysis of the disk space required for the container images.
 docker images
 ```
 
-![](./docker-images.png)
+![](./docker-images.jpeg)
 
 > The Nginx container image requires only **161 MB**.
 
@@ -85,7 +85,7 @@ Measurement of the time required to start the containerized application.
 ```bash
 time docker run -d -p 8080:80 --name nginx-container nginx
 ```
-![](./docker-time-run.png)
+![](./docker-time-run.jpeg)
 
 > The container started in **0.428 seconds**.
 
@@ -95,7 +95,7 @@ Real-time monitoring of the container's resource consumption.
 ```bash
 docker stats
 ```
-![](./docker-stats.png)
+![](./docker-stats.jpeg)
 
 > The running container uses **13.14 MiB** of RAM.
 
