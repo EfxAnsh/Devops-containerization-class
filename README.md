@@ -15,4 +15,8 @@
 ## Theory
  - [Preserve changes in container](./Theory/PreserveChangesInContainer/README.md)
 
- - [Dockerfiele Tutorial](./Theory/DockerfileTutorial/README.md)
+ - [Dockerfile Tutorial](./Theory/DockerfileTutorial/README.md)
+
+ - [class_test](./Theory/class_test/README.md)
+
+ - [06_FEB_LAB](./Theory/class_test/README.md)
