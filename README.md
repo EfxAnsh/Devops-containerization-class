@@ -11,6 +11,7 @@
 | --: | :-- |
 | 1 | [Comparison of Virtual Machines (VMs) and Containers](./LAB/Experiment_1/README.md) |
 | 2 | [Docker Installation, Configuration, and Running Images](./LAB/Experiment_2/readme.md) |
+| 3 | [Deploying NGINX using diffrent base images and compairng image layers](./Lab/Experiment3/README.md) |
 
 ## Theory
  - [Preserve changes in container](./Theory/PreserveChangesInContainer/README.md)
