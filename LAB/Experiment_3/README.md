@@ -114,8 +114,8 @@ docker history nginx-alpine
 ![](./nginx-alpine-history.png)
 
 ### Observations
- - Size of official nginx image is the largest (239MB).
- - nginx-alpine is the smallest (125MB).
+ - Size of official nginx image is the largest (258MB).
+ - nginx-alpine is the smallest (150MB).
  - Official nginx image has the most layers.
  - nginx-alpine has the least layers.
 
