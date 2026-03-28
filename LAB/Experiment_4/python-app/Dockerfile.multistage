@@ -1,0 +1,24 @@
+# Stage 1: Builder
+FROM python:3.13-alpine AS builder
+WORKDIR /app
+COPY requirements.txt .
+# Install dependencies to a local folder
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+# Stage 2: Final Runner
+FROM python:3.13-alpine
+WORKDIR /app
+
+# Only copy the installed site-packages from the builder
+COPY --from=builder /root/.local /root/.local
+COPY app.py .
+
+# Update PATH so the app finds the installed packages
+ENV PATH=/root/.local/bin:$PATH
+
+# Good practice: Run as a non-root user
+RUN adduser -D appuser
+USER appuser
+
+EXPOSE 5001
+CMD ["python", "app.py"]
