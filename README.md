@@ -27,4 +27,4 @@
 
 | S. No. | Experiment |
 | :--- | :--- |
-| 1 | [Containerized Node.js & PostgreSQL Application](./https://github.com/EfxAnsh/PROJECT-FOLDER) |
+| 1 | [Containerized Node.js & PostgreSQL Application](https://github.com/EfxAnsh/PROJECT-FOLDER/blob/main/README.md) |
