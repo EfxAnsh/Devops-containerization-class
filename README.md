@@ -22,3 +22,9 @@
  - [class_test](./Theory/class_test/README.md)
 
  - [06_FEB_LAB](./Theory/class_test/README.md)
+
+## Project Assignment
+
+| S. No. | Experiment |
+| :--- | :--- |
+| 1 | [Containerized Node.js & PostgreSQL Application](./|
