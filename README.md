@@ -27,4 +27,4 @@
 
 | S. No. | Experiment |
 | :--- | :--- |
-| 1 | [Containerized Node.js & PostgreSQL Application](./|
+| 1 | [Containerized Node.js & PostgreSQL Application](./PROJECT-FOLDER/README.md)
