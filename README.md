@@ -14,6 +14,14 @@
 | 3 | [Deploying NGINX using diffrent base images and compairng image layers](./LAB/Experiment_3/README.md) |
 | 4 | [Docker Essentials](./LAB/Experiment_4/README.md) |
 | 5 | [Docker - volumes,Environment Variables,Montitoring and Networks](./LAB/Experiment_5/Readme.md) |
+| 6 | [Docker Compose vs Docker Run](./LAB/Experiment_6/README.md) |
+| 7 | [CI/CD Pipeline using Jenkins, GitHub, and Docker Hub](./LAB/Experiment_7/README.md) |
+| 9 | [Ansible](./LAB/Experiment_9/README.md) |
+| 10 | [Working with SonarQube](./LAB/Experiment_10/README.md) |
+| 11 | [Container Orchestration via Docker Swarm](./LAB/Experiment_11/README.md) |
+| 12 | [Study and Analyse Container Orchestration using Kubernetes](./LAB/Experiment_12/README.md) |
+
+
 ## Theory
  - [Preserve changes in container](./Theory/PreserveChangesInContainer/README.md)
 
