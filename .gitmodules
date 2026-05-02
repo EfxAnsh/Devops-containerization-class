@@ -1,0 +1,3 @@
+[submodule "PROJECT-FOLDER"]
+	path = PROJECT-FOLDER
+	url = https://github.com/EfxAnsh/PROJECT-FOLDER.git
